@@ -4,6 +4,7 @@
     "method": "GET"
   },
   "response": {
-    "status": 200
+    "status": 200,
+    "body" : "Product abc is in stock"
   }
 }

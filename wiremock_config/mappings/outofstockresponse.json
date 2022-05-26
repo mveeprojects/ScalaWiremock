@@ -4,6 +4,7 @@
     "method": "GET"
   },
   "response": {
-    "status": 404
+    "status": 404,
+    "body" : "Product 123 is not in stock"
   }
 }
