@@ -1,18 +1,18 @@
 # ScalaWiremock
 
-This simple example is based on using a standalone Wiremock instance (docker container), rather creating our own
-embedded Wiremock server (e.g. [here](https://wiremock.org/docs/java-usage/)), and has been put together purely to
+This simple example is based on using a standalone Wiremock instance (docker container), rather than creating our own
+embedded WiremockServer (e.g. [here](https://wiremock.org/docs/java-usage/)), and has been put together purely to
 demonstrate how to populate stubs in Wiremock, either by volume-mount, or programmatically.
 
 ### Volume-Mounting Mappings
 
-This is the most simple means to create mappings, you write json files that represent the request and response you want
+This is the most simple method to create mappings, you write json files that represent the request and response you want
 to stub for, then you mount these to a particular directory within the Wiremock docker container.
 
-This is more of a manual, hard-coded approach. Everything is set up ahead of the tests running, and you won't be able to
-change/clear any mappings dynamically as the tests run (without adding code to do so - see next section).
+This is more of a manual, hard-coded approach. Everything is set up ahead of the app/tests running, and you won't be able to
+change/clear any mappings dynamically (without adding code to do so - see next section).
 
-In order to use this approach to meet all of your needs you'll need to explicitly define every stub your app/tests need
+In order for this approach to meet all of your needs you'll need to explicitly define every stub your app/tests need
 ahead of time.
 
 ### Provisioning Mappings in Code
