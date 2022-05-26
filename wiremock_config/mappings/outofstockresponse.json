@@ -1,10 +1,10 @@
 {
   "request": {
-    "urlPathPattern": "/checkstock/123",
+    "url": "/checkstock/123",
     "method": "GET"
   },
   "response": {
     "status": 404,
-    "body" : "Product 123 is not in stock"
+    "body" : "Product is not in stock"
   }
 }
