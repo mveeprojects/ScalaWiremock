@@ -26,7 +26,7 @@ This example uses two Wiremock [docker containers](docker-compose.yml);
 * One which is volume-mounted to [some mappings](wiremock_config/mappings) and is available on port [8080](http://localhost:8080/__admin/mappings)
 * The other which does not have volume-mounted mappings is available on port [8081](http://localhost:8081/__admin/mappings).
 
-To run these containers simply run `docker-compose up -d`, to shut them down just run `docker-compose down`.
+To start these containers, from the root of this project run `docker-compose up -d`, to shut them down run `docker-compose down`.
 
 ### Wiremock Endpoints
 
