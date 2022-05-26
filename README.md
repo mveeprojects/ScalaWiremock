@@ -40,6 +40,10 @@ This example uses two Wiremock [docker containers](docker-compose.yml);
 To start these containers, from the root of this project run `docker-compose up -d`, to shut them down
 run `docker-compose down`.
 
+Once these containers are running, you can either view the stubs at the links below or run the tests
+in [MySpec.scala](src/test/scala/MySpec.scala) to exercise and experiment with the stubbing and removal of stubs on port
+8081 via code.
+
 ### Wiremock Endpoints
 
 * [View all mappings](http://localhost:8080/__admin/mappings)
@@ -49,5 +53,5 @@ run `docker-compose down`.
 ### Sources
 
 * [Official Wiremock Website](https://wiremock.org/)
-  * [Documentation on Stubbing via API or HTTP](https://wiremock.org/docs/stubbing/)
+    * [Documentation on Stubbing via API or HTTP](https://wiremock.org/docs/stubbing/)
 * [Wiremock Library (Github)](https://github.com/wiremock/wiremock) 
