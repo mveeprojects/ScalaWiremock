@@ -13,13 +13,12 @@ object HttpUtils {
 
   implicit val actorSystem: ActorSystem = ActorSystem()
 
-  private val baseUrlAndPort    = "http://localhost:8081"
+  private val baseUrlAndPort = "http://localhost:8081"
 
   def fireGetRequest(endpoint: String): Future[HttpResponse] =
     Http()
       .singleRequest(HttpRequest(HttpMethods.GET, s"$baseUrlAndPort$endpoint"))
 
-  def unmarshalledResponseEntity(entity: ResponseEntity): String = {
+  def unmarshalledResponseEntity(entity: ResponseEntity): String =
     Unmarshal(entity).to[String].futureValue
-  }
 }

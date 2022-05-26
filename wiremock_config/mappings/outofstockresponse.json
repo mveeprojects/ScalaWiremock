@@ -5,6 +5,6 @@
   },
   "response": {
     "status": 404,
-    "body" : "Product is not in stock"
+    "body": "Product is not in stock"
   }
 }

@@ -5,6 +5,6 @@
   },
   "response": {
     "status": 200,
-    "body" : "Product is in stock"
+    "body": "Product is in stock"
   }
 }

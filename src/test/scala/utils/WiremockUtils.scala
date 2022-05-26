@@ -20,7 +20,6 @@ object WiremockUtils {
         )
     )
 
-  def clearMappings(): Unit = {
+  def clearMappings(): Unit =
     WireMock.reset()
-  }
 }
