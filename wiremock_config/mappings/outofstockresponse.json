@@ -1,0 +1,9 @@
+{
+  "request": {
+    "urlPathPattern": "/checkstock/123",
+    "method": "GET"
+  },
+  "response": {
+    "status": 404
+  }
+}
