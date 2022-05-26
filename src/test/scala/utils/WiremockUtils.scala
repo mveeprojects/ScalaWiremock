@@ -3,10 +3,11 @@ package utils
 import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.client.WireMock.{aResponse, stubFor, urlEqualTo}
 import com.github.tomakehurst.wiremock.stubbing.StubMapping
+import config.TestConfig.testConf.wiremock
 
 object WiremockUtils {
 
-  WireMock.configureFor(8081)
+  WireMock.configureFor(wiremock.port)
 
   def stubResponse(endpoint: String, responseStatus: Int, responseBody: String): StubMapping =
     stubFor(
@@ -18,4 +19,8 @@ object WiremockUtils {
             .withBody(responseBody)
         )
     )
+
+  def clearMappings(): Unit = {
+    WireMock.reset()
+  }
 }
