@@ -49,4 +49,5 @@ run `docker-compose down`.
 ### Sources
 
 * [Official Wiremock Website](https://wiremock.org/)
+  * [Documentation on Stubbing via API or HTTP](https://wiremock.org/docs/stubbing/)
 * [Wiremock Library (Github)](https://github.com/wiremock/wiremock) 
