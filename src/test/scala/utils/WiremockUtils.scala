@@ -9,7 +9,7 @@ object WiremockUtils {
 
   WireMock.configureFor(wiremock.port)
 
-  def stubResponse(endpoint: String, responseStatus: Int, responseBody: String): StubMapping =
+  def createStubMapping(endpoint: String, responseStatus: Int, responseBody: String): StubMapping =
     stubFor(
       WireMock
         .get(urlEqualTo(endpoint))
@@ -20,6 +20,6 @@ object WiremockUtils {
         )
     )
 
-  def clearMappings(): Unit =
+  def clearAllStubMappings(): Unit =
     WireMock.reset()
 }

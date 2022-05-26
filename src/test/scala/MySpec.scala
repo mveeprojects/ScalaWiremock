@@ -2,19 +2,8 @@ import akka.http.scaladsl.model.HttpResponse
 import base.MySpecBase
 import org.scalatest.concurrent.ScalaFutures.convertScalaFuture
 import utils.HttpUtils._
-import utils.WiremockUtils._
 
 class MySpec extends MySpecBase {
-
-  private val endpointOne = "/checkstock/abc"
-  private val endpointTwo = "/checkstock/123"
-
-  override def beforeAll(): Unit = {
-    stubResponse(endpointOne, 200, "Product is in stock")
-    stubResponse(endpointTwo, 404, "Product is not in stock")
-  }
-
-  override def afterAll(): Unit = clearMappings()
 
   "the checkstock/abc endpoint should return a 200" in {
     eventually {
