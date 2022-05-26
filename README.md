@@ -1,8 +1,6 @@
 # ScalaWiremock
 
-Simple project demonstrating how to create stubs using Wiremock.
-
-This can be done by either of the below two methods.
+This simple example is based on using a standalone Wiremock instance (docker container), rather creating our own embedded Wiremock server (e.g. [here](https://wiremock.org/docs/java-usage/)), and has been put together purely to demonstrate how to populate stubs in Wiremock, either by volume-mount, or programmatically.
 
 ### Volume-Mounting Mappings
 
