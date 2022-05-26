@@ -7,7 +7,7 @@ class MySpec extends MySpecBase {
 
   "the checkstock/abc endpoint should return a 200" in {
     eventually {
-      val getRequestResponse: HttpResponse = fireGetRequest(endpointOne).futureValue
+      val getRequestResponse: HttpResponse = fireGetRequest(checkStockAbcEndpoint).futureValue
       getRequestResponse.status.intValue shouldBe 200
       unmarshalledResponseEntity(getRequestResponse.entity) shouldBe "Product is in stock"
     }
@@ -15,7 +15,7 @@ class MySpec extends MySpecBase {
 
   "the checkstock/123 endpoint should return a 404" in {
     eventually {
-      val getRequestResponse: HttpResponse = fireGetRequest(endpointTwo).futureValue
+      val getRequestResponse: HttpResponse = fireGetRequest(checkStock123Endpoint).futureValue
       getRequestResponse.status.intValue shouldBe 404
       unmarshalledResponseEntity(getRequestResponse.entity) shouldBe "Product is not in stock"
     }

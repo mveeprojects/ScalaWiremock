@@ -12,12 +12,12 @@ trait MySpecBase extends AnyFreeSpec with Matchers with Eventually with BeforeAn
   override implicit val patienceConfig: PatienceConfig =
     PatienceConfig(patience.timeout, patience.interval)
 
-  val endpointOne = "/checkstock/abc"
-  val endpointTwo = "/checkstock/123"
+  val checkStockAbcEndpoint = "/checkstock/abc"
+  val checkStock123Endpoint = "/checkstock/123"
 
   override def beforeAll(): Unit = {
-    createStubMapping(endpointOne, 200, "Product is in stock")
-    createStubMapping(endpointTwo, 404, "Product is not in stock")
+    createStubMapping(checkStockAbcEndpoint, 200, "Product is in stock")
+    createStubMapping(checkStock123Endpoint, 404, "Product is not in stock")
   }
 
   override def afterAll(): Unit = clearAllStubMappings()
