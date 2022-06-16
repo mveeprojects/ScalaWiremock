@@ -22,7 +22,7 @@ you write your mappings as code next to your tests and therefore allows you to u
 tests (e.g. Scala) to manage not only your tests but also your stub mappings (no more manual json wrangling!).
 
 When provisioning your mappings via functions you can easily integrate the setup and cleardown of stub mappings
-per-test (e.g. using [Before | After][Each | All] steps). This means that you can specific only the stubs you need for a
+per-test (e.g. using [Before | After][Each | All] steps). This means that you can specifically provision only the stubs you need for a
 given test (or set of test), run the test(s), then clear down the stub mappings before repeating on the next test(s).
 
 I prefer this approach as it means as long as I write my stub code well, it is much easier to maintain and extend than
