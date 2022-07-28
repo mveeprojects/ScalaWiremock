@@ -9,7 +9,7 @@ demonstrate how to populate stubs in Wiremock, either by volume-mount, or progra
 This is the most simple method to create mappings, you write json files that represent the request and response you want
 to stub for, then you mount these to a particular directory within the Wiremock docker container.
 
-This is more of a manual, hard-coded approach. Everything is set up ahead of the app/tests running, and you won't be able to
+This is more of a manual, hard-coded (static) approach. Everything is set up ahead of the app/tests running, and you won't be able to
 change/clear any mappings dynamically (without adding code to do so - see next section).
 
 In order for this approach to meet all of your needs you'll need to explicitly define every stub your app/tests need
@@ -17,15 +17,14 @@ ahead of time.
 
 ### Provisioning Mappings in Code
 
-This approach is a bit more involved and can take a bit more time to setup initially. However, this approach does let
-you write your mappings as code next to your tests and therefore allows you to use the same language as used in your
-tests (e.g. Scala) to manage not only your tests but also your stub mappings (no more manual json wrangling!).
+This approach is a bit more involved and can take a bit more time to setup initially, however, this approach does let
+you write your mappings as code alongside your tests (no more manual json wrangling!).
 
 When provisioning your mappings via functions you can easily integrate the setup and cleardown of stub mappings
-per-test (e.g. using [Before | After][Each | All] steps). This means that you can specific only the stubs you need for a
-given test (or set of test), run the test(s), then clear down the stub mappings before repeating on the next test(s).
+per-test/suite (e.g. using [Before | After][Each | All] steps). This means that you can specific only the stubs you need for a
+given test (or suite of test), run the test(s), then clear down the stub mappings before repeating on the next test/suite of tests.
 
-I prefer this approach as it means as long as I write my stub code well, it is much easier to maintain and extend than
+I personally prefer this approach, as long as I write my stubbing code well, it is much easier to manage my stubs than
 working with an ever-expanding set of json files which can easily become confusing and lead to mistakes.
 
 ### How to Run This Example
@@ -46,9 +45,12 @@ in [MySpec.scala](src/test/scala/MySpec.scala) to exercise and experiment with t
 
 ### Wiremock Endpoints
 
-* [View all mappings](http://localhost:8080/__admin/mappings)
-* [Example 200 response - checkstock/abc](http://localhost:8080/checkstock/abc)
-* [Example 404 response - checkstock/123](http://localhost:8080/checkstock/123)
+* [View all mappings (port 8080)](http://localhost:8080/__admin/mappings)
+* [View all mappings (port 8081)](http://localhost:8081/__admin/mappings)
+* [Example stub - checkstock/abc (port 8080)](http://localhost:8080/checkstock/abc)
+* [Example stub - checkstock/abc (port 8081)](http://localhost:8081/checkstock/abc)
+* [Example stub - checkstock/123 (port 8080)](http://localhost:8080/checkstock/123)
+* [Example stub - checkstock/123 (port 8081)](http://localhost:8081/checkstock/123)
 
 ### Sources
 

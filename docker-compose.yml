@@ -3,13 +3,13 @@ version: '3.8'
 services:
 
   volume_mounted_wiremock:
-    image: wiremock/wiremock:2.33.1
+    image: wiremock/wiremock:2.33.2
     ports:
       - "8080:8080"
     volumes:
       - "./wiremock_config:/home/wiremock/mappings"
 
   wiremock:
-    image: wiremock/wiremock:2.33.1
+    image: wiremock/wiremock:2.33.2
     ports:
       - "8081:8080"

@@ -6,6 +6,7 @@ import utils.HttpUtils._
 class MySpec extends MySpecBase {
 
   "the checkstock/abc endpoint should return a 200" in {
+//    Thread.sleep(10000) // adding a sleep so you can see the stub mappings are temporarily provisioned on port 8081.
     eventually {
       val getRequestResponse: HttpResponse = fireGetRequest(checkStockAbcEndpoint).futureValue
       getRequestResponse.status.intValue shouldBe 200
