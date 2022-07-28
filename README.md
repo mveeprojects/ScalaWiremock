@@ -21,8 +21,8 @@ This approach is a bit more involved and can take a bit more time to setup initi
 you write your mappings as code alongside your tests (no more manual json wrangling!).
 
 When provisioning your mappings via functions you can easily integrate the setup and cleardown of stub mappings
-per-test/suite (e.g. using [Before | After][Each | All] steps). This means that you can specific only the stubs you need for a
-given test (or suite of test), run the test(s), then clear down the stub mappings before repeating on the next test/suite of tests.
+per-test/suite (e.g. using [Before | After][Each | All] steps). This means that you can specifically provision only the stubs you need for a
+given test (or suite of tests), run the test(s), then clear down the stub mappings before repeating on the next test/suite of tests.
 
 I personally prefer this approach, as long as I write my stubbing code well, it is much easier to manage my stubs than
 working with an ever-expanding set of json files which can easily become confusing and lead to mistakes.
